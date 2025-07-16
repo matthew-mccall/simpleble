@@ -71,15 +71,11 @@ void Adapter1::SetDiscoveryFilter(DiscoveryFilter filter) {
         }
     }
 
-    if (!filter.DuplicateData) {
-        properties.dict_append(SimpleDBus::Holder::Type::BOOLEAN, "DuplicateData",
-                               SimpleDBus::Holder::create_boolean(true));
-    }
+    properties.dict_append(SimpleDBus::Holder::Type::BOOLEAN, "DuplicateData",
+                           SimpleDBus::Holder::create_boolean(filter.DuplicateData));
 
-    if (filter.Discoverable) {
-        properties.dict_append(SimpleDBus::Holder::Type::BOOLEAN, "Discoverable",
-                               SimpleDBus::Holder::create_boolean(false));
-    }
+    properties.dict_append(SimpleDBus::Holder::Type::BOOLEAN, "Discoverable",
+                            SimpleDBus::Holder::create_boolean(filter.Discoverable));
 
     if (filter.Pattern.size() > 0) {
         properties.dict_append(SimpleDBus::Holder::Type::STRING, "Pattern",
