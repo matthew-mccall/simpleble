@@ -65,7 +65,7 @@ void AdapterLinux::scan_start() {
     adapter_->discovery_start();
 
     // TODO: Does a discovery filter need to be set?
-    adapter_->discovery_filter(DiscoveryFilter {});
+    adapter_->discovery_filter({});
 
     SAFE_CALLBACK_CALL(this->_callback_on_scan_start);
     is_scanning_ = true;
