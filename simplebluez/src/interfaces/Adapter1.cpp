@@ -73,7 +73,7 @@ void Adapter1::SetDiscoveryFilter(DiscoveryFilter filter) {
 
     if (!filter.DuplicateData) {
         properties.dict_append(SimpleDBus::Holder::Type::BOOLEAN, "DuplicateData",
-                               SimpleDBus::Holder::create_boolean(false));
+                               SimpleDBus::Holder::create_boolean(true));
     }
 
     if (filter.Discoverable) {
